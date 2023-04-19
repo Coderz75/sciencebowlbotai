@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>ScienceBowlBotAi</title>
+
+<style>
+
+body{
+  background-color: rgb(221, 221, 221);
+}
+.input{
+  position: absolute;
+    top: 50%;
+    left: 10%;
+    margin-top: -50px;
+    margin-left: -50px;
+    width: 80vw;
+    height: 50vh;
+    text-align: center;
+    font-size: x-large;
+}
+#query{
+  text-align: center;
+  width:50vw;
+  height: 10vh;
+  font-size: x-large;
+  padding:10px;
+  border-radius:30px;
+  box-shadow:0 0 15px 4px rgba(34, 34, 34, 0.308);
+}
+
+#submit{
+  height: 5vh;
+  width: 5vw;
+}
+#type{
+  height: 5vh;
+  width: 5vw;
+}
+.output{
+  position:relative;
+  text-align: center;
+  left: 18%;
+  width: 50vw;
+  font-size: xx-large;
+}
+
+</style>
+</head>
+
+<body>
+    <!-- Make sure your page supports utf-8 characterset. -->
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@tensorflow-models/universal-sentence-encoder"></script>
+    <!-- Adds the WASM backend to the global backend registry -->
+    <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs-backend-wasm/dist/tf-backend-wasm.js"></script>
+    
+    <div class = "input">
+      <select id="type" name="type">
+        <option value="astro">ASTRONOMY</option>
+        <option value="bio">BIOLOGY</option>
+        <option value="bio2">BIOLOGY 2</option>
+        <option value="chem">CHEMISTRY</option>
+        <option value="chem2">CHEMISTRY 2</option>
+        <option value="cs">COMPUTER SCIENCE</option>
+        <option value="eas">EARTH & SPACE</option>
+        <option value="energy">ENERGY</option>
+        <option value="es">EARTH SCIENCE</option>
+        <option value="gen">GENERAL</option>
+        <option value="math">MATH</option>
+        <option value="math2">MATH 2</option>
+        <option value="phy">PHYISICS</option>
+        <option value="phy2">PHYISICS 2</option>
+        <option value="phy3">PHYISICS 3</option>
+        <option value="phy4">PHYISICS 4</option>
+
+      </select>
+      <input type="text" id="query" name="query" placeholder="Ask A question!" required /><button id ="submit">Submit</button>
+      <br><br>
+      <div class = "output">
+      <p1 id ="output"></p1>
+      </div>    
+    </div>
+    <script src="script.js"></script>
+</body>
+
+</html>
